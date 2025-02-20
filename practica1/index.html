@@ -37,7 +37,7 @@
                         <div class="col-lg-8 col-xl-7 col-xxl-6">
                             <div class="my-5 text-center text-xl-start">
                                 <h1 class="display-6 fw-bolder text-white mb-2">Portafolio de Actividades</h1>
-                                <h1 class="display-8 fw-bolder text-white mb-2">Introduccion a Ing. Mecatrónica</h1>
+                                <h1 class="display-8 fw-bolder text-white mb-2">Elementos programables II</h1>
                                 <p id="resumen" class="display-8 fw-normal text-white-50 mb-4">Departamento de Ciencias e Ingenierías | Universidad Iberoamericana Puebla, México.</p>
                             </div>
                         </div>
@@ -51,17 +51,17 @@
                     <!-- Post header-->
                     <header class="mb-4">
                         <!-- Post title-->
-                        <h1 class="fw-bolder mb-1">Titulo de la practica de laboratorio</h1>
+                        <h1 class="fw-bolder mb-1">Comparación de microcontroladores</h1>
 
                         <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
                             <img class="img-fluid rounded-circle" width="50px" src="assets/Huber.jpg" alt="..." />
                             <div class="ms-2">
-                                <div class="fw-bold">Nombre de integrante del equipo</div>
-                                <div class="text-muted">Carrera que estudia</div>
+                                <div class="fw-bold">Héctor Cornejo Morales y Bruno Carballido Rosas</div>
+                                <div class="text-muted">Ing. Mecatrónica</div>
                             </div>
                         <!--Aqui termina etiqueta de alumno-->
 
-                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: Mes dia, Año</div>
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: Febrero 20, 2025</div>
                         <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
                         <a class="badge bg-primary text-decoration-none link-light" >Arduino</a>
                         <a class="badge bg-primary text-decoration-none link-light" >Electrónica</a>
@@ -78,18 +78,44 @@
                                 
                     <p id="resumen">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
-                        <p class="fs-6 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe. The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe. The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
-                        <p class="fs-6 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
+                        <p class="fs-6 mb-4">La practica de esta semana consistió en realizar 3 diferentes códigos para probarlos en 3 diferentes microcontroladores. Primero se realizaría una simulación de los circuitos y una ves terminada la prueba se construirían los circuitos en físico. El objetivo era observar si notábamos alguna diferencia en el desempeño a la hora de cargar el código o llevar a cabo el funcionamiento de los circuitos.</p>
                         
                         <p id="intro">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
-                        <p class="fs-6 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe. The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe. The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
-                        <p class="fs-6 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
+                        <p class="fs-6 mb-4">Un microcontrolador es un circuito integrado programable, básicamente es un chip que funciona como una minicomputadora que está diseñada para administrar tareas específicas en sistemas integrados sin tener un sistema operativo complejo. Cada microcontrolador cuenta con una arquitectura diferente y varían en cuestión de desempeño, componentes y utilidades.</p>
+                        <p class="fs-6 mb-4">Un microcontrolador cuenta con elementos esenciales que definen su arquitectura.</p>
+                        <ol>
+                            <li value="1">Unidad Central de Procesamiento (CPU)</li>
+                                <ul>
+                                    <li type="disc" class="fs-6 mb-4">Es el cerebro de la computadora, es el encargado de procesar datos y ejecutar instrucciones. </li>
+                                    <li type="disc" class="fs-6 mb-4">La CPU puede ser de 8, 16, 32 o 64 bits, con esto se refiere a la cantidad de datos que el microcontrolador o computadora puede manejar al mismo tiempo.</li>
+                                </ul>
+                            <li>Memoria</li>
+                                <ul>
+                                    <li type="disc" class="fs-6 mb-4">Cada computadora cuenta con diferentes tipos de memoria</li>
+                                    <li type="disc" class="fs-6 mb-4">Flash ROM: Almacena datos de forma permanente (hasta que se cambien por otro programa).</li>
+                                    <li type="disc" class="fs-6 mb-4">RAM: Almacena datos de forma temporal en lo que se corre el programa.</li>
+                                    <li type="disc" class="fs-6 mb-4">EEPROM: Almacena datos en el microcontrolador incluso cuando este esta apagado.</li>
+                                </ul>
+                            <li>Periféricos o Pines</li>
+                                <ul>
+                                    <li type="disc" class="fs-6 mb-4">Los pines son modulos de conexión que permiten la interaccion con otros electronicos o un circuito. Estan los GPIOs (pines de entrada y salida),PWM, timers, I2C, etc.</li>
+                                </ul>
+                            <li>Frecuencia</li>
+                                <ul>
+                                    <li type="disc" class="fs-6 mb-4">La frecuencia es basicamente la velocidad con la que el procesador ejecuta instrucciones, una mayor frecuencia es igual a mejor rendimiento pero de la misma manera consume mas energía. Hay microcontroladores que tienen una frecuencia establecida unica, esto se refiere a que no puedes modificar el valor de su freceuncia interna, pero puedes aumentarla usando algun componente externo. Por otro lado hay otros microcontroladores a los cuales les puedes cambiar el valor de su frecuencia interna sin la necesidad de algun componente externo.</li>
+                                </ul>
+                        </ol>
                         
                         <p id="materiales">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
-                        <p class="fs-6 mb-4">Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe. The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.Science is an enterprise that should be cherished as an activity of the free human mind. Because it transforms who we are, how we live, and it gives us an understanding of our place in the universe. The universe is large and old, and the ingredients for life as we know it are everywhere, so there's no reason to think that Earth would be unique in that regard. Whether of not the life became intelligent is a different question, and we'll see if we find that.</p>
-                        <p class="fs-6 mb-4">If you get asteroids about a kilometer in size, those are large enough and carry enough energy into our system to disrupt transportation, communication, the food chains, and that can be a really bad day on Earth.</p>
+                        <p class="fs-6 mb-4">Para esta practica vamos a usar 3 microcontroladores:</p>
+                        <ul>
+                            <li type="disc" class="fs-6 mb-4">ESP32-C6</li>
+                            <li type="disc" class="fs-6 mb-4">Arduino UNO</li>
+                            <li type="disc" class="fs-6 mb-4">Attiny85</li>
+                        </ul>
+                        <p class="fs-6 mb-4">Una protoboard, un pulsador, un LED, cables, una resitencia de 10KOhms y otra de 5KOhms</p>
                         
                         <p id="desarrollo">
                         <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
