@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Práctica 3 | Ibero Puebla</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container px-5">
+                    <a class="navbar-brand">Menu</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="../">Home</a></li>                    
+                            <li class="nav-item"><a class="nav-link" href="../index.html#resumen">Acerca de mi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../index.html#practicas">Prácticas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Seccion TITULO de Portafolio-->
+            <header class="bg-primary py-2 mt-6">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-6 fw-bolder text-white mb-2">Portafolio de Actividades</h1>
+                                <h1 class="display-8 fw-bolder text-white mb-2">Elementos programables II</h1>
+                                <p id="resumen" class="display-8 fw-normal text-white-50 mb-4">Departamento de Ciencias e Ingenierías | Universidad Iberoamericana Puebla, México.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Seccion TITULO de la Práctica-->
+            <section class="py-3" id="scroll-target">
+                <div class="container px-5 my-2">
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Conexion Bluetooth</h1>
+
+                        <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
+                            <div class="ms-2">
+                                <div class="fw-bold">Héctor Cornejo Morales y Bruno Carballido Rosas</div>
+                                <div class="text-muted">Ing. Mecatrónica</div>
+                            </div>
+                        <!--Aqui termina etiqueta de alumno-->
+
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: Marzo 4, 2025</div>
+                        <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
+                        <a class="badge bg-primary text-decoration-none link-light" >Programación</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Electrónica</a>
+
+                    </header>
+                </div>
+            </section>
+
+            <!-- Seccion de CONTENIDO de la Práctica-->
+            <section>
+                <div class="container px-5">
+
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/web.jpg" alt="..." /></figure>
+                                
+                    <p id="resumen">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
+                        <p class="fs-6 mb-4">En esta práctica se realizó una evaluación comparativa entre Bluetooth Clásico y Bluetooth Low Energy (BLE), con el objetivo de analizar sus principales diferencias en términos de consumo energético, velocidad de transmisión, alcance y capacidades de conexión.</p>
+                        <p class="fs-6 mb-4">La práctica permitió comprender las fortalezas y limitaciones de cada tecnología, y su aplicación óptima según el tipo de dispositivo o sistema a implementar. Se concluye que la elección entre Bluetooth Clásico y BLE depende del equilibrio entre rendimiento y eficiencia energética, según los requerimientos específicos de cada aplicación.</p>
+
+                        <p id="intro">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
+                        <p class="fs-6 mb-4">Bluetooth es una tecnología de comunicación inalámbrica de corto alcance que permite la transferencia de datos entre dispositivos electrónicos sin necesidad de cables físicos. Opera en la banda de frecuencia de 2.4 GHz y está diseñada para crear redes personales (PAN) con bajo consumo energético, facilitando la conexión entre teléfonos móviles, computadoras, audífonos, sensores, dispositivos portátiles y más.
+                            Existen dos principales variantes de esta tecnología: Bluetooth Clásico, que se utiliza principalmente en aplicaciones que requieren un flujo continuo de datos (como audio o transferencia de archivos), y Bluetooth Low Energy (BLE), que está optimizado para aplicaciones que demandan bajo consumo energético y transmisión esporádica de datos, como en el caso de dispositivos IoT o wearables. </p>
+                        <ol>
+                            <h1>Conexion Bluetooth ESP32</h1>
+                                <ul>
+                                    <li type="disc" class="fs-6 mb-4">Este microcontrolador cuenta con bluetooth integrado low Energy. Se realizo un programa que envia datos de la computadora al esp y calcula el tiempo que la operacion tomo.</li>
+                                </ul>
+
+                                <h3>Codigo ESP32:</h3>
+                                <pre>
+                                    "#include <BLEDevice.h>
+                                        #include <BLEServer.h>
+                                        #include <BLEUtils.h>
+                                        #include <BLE2902.h>
+                                        
+                                        // UUID del servicio y de la característica
+                                        #define SERVICE_UUID        "dfe84f7c-4f03-43b2-b1c7-9f1fe9b5d734"
+                                        #define CHARACTERISTIC_UUID "e839aa2d-88aa-45a0-8f6b-fc7c0b22b106"
+                                        
+                                        BLEServer *pServer = nullptr;
+                                        BLECharacteristic *pCharacteristic = nullptr;
+                                        bool deviceConnected = false;
+                                        bool oldDeviceConnected = false;
+                                        unsigned long startTime;  // Variable para almacenar el tiempo de inicio
+                                        
+                                        // Clase callback para manejar la conexión y desconexión
+                                        class MyServerCallbacks : public BLEServerCallbacks {
+                                          void onConnect(BLEServer *pServer) {
+                                            deviceConnected = true;
+                                            Serial.println("Dispositivo conectado");
+                                          }
+                                        
+                                          void onDisconnect(BLEServer *pServer) {
+                                            deviceConnected = false;
+                                            Serial.println("Dispositivo desconectado");
+                                          }
+                                        };
+                                        
+                                        // Clase callback para manejar la escritura en la característica BLE
+                                        class MyCallbacks : public BLECharacteristicCallbacks {
+                                          void onRead(BLECharacteristic *pCharacteristic) override {
+                                            Serial.println("Solicitud de lectura");
+                                          }
+                                        
+                                          void onWrite(BLECharacteristic *pCharacteristic) {
+                                            String rxValue = pCharacteristic->getValue();
+                                            if (rxValue.length() > 0) {
+                                              Serial.print("Valor recibido desde Python: ");
+                                              Serial.println(rxValue.c_str());
+                                            }
+                                          }
+                                        };
+                                        
+                                        void setup() {
+                                          // Inicializa la comunicación serial
+                                          Serial.begin(115200);
+                                        
+                                          // Inicializa el dispositivo BLE con un nombre
+                                          BLEDevice::init("ESP32_BLE_Hec");
+                                        
+                                          // Crea el servidor BLE
+                                          pServer = BLEDevice::createServer();
+                                          pServer->setCallbacks(new MyServerCallbacks());
+                                        
+                                          // Crea el servicio BLE
+                                          BLEService *pService = pServer->createService(SERVICE_UUID);
+                                        
+                                          // Crea la característica BLE con propiedades de lectura, escritura y notificación
+                                          pCharacteristic = pService->createCharacteristic(
+                                            CHARACTERISTIC_UUID,
+                                            BLECharacteristic::PROPERTY_READ |
+                                            BLECharacteristic::PROPERTY_WRITE |
+                                            BLECharacteristic::PROPERTY_NOTIFY
+                                          );
+                                        
+                                          // Agrega el descriptor para habilitar notificaciones
+                                          pCharacteristic->addDescriptor(new BLE2902());
+                                        
+                                          // Asigna el callback para gestionar la escritura
+                                          pCharacteristic->setCallbacks(new MyCallbacks());
+                                        
+                                          // Inicia el servicio BLE
+                                          pService->start();
+                                        
+                                          // Configura y comienza la publicidad, incluyendo el UUID del servicio
+                                          BLEAdvertising *pAdvertising = BLEDevice::getAdvertising();
+                                          pAdvertising->addServiceUUID(SERVICE_UUID);
+                                          pAdvertising->setScanResponse(true);
+                                          BLEDevice::startAdvertising();
+                                          Serial.println("Esperando conexión BLE...");
+                                        }
+                                        
+                                        void loop() {
+                                          // Maneja la reconexión si el dispositivo se desconectó
+                                          if (!deviceConnected && oldDeviceConnected) {
+                                            delay(500); // Espera un momento para que la conexión se estabilice
+                                            pServer->startAdvertising(); // Reinicia la publicidad
+                                            Serial.println("Esperando conexión BLE...");
+                                            oldDeviceConnected = deviceConnected;
+                                          }
+                                        
+                                          // Si el dispositivo está conectado, envía datos
+                                          if (deviceConnected) {
+                                            startTime = millis(); // Inicia el contador de tiempo
+                                        
+                                            for (int i = 0; i < 100; i++) {
+                                              // Envía un valor al Python
+                                              String valueStr = String(i + 1); // Envía valores del 1 al 100
+                                              pCharacteristic->setValue(valueStr.c_str());
+                                              pCharacteristic->notify(); // Envía notificación a los clientes conectados
+                                              Serial.print("Valor enviado a Python: ");
+                                              Serial.println(valueStr);
+                                        
+                                              // Calcula el tiempo transcurrido
+                                              unsigned long finalTime = millis() - startTime;
+                                        
+                                              // Muestra el tiempo que tardó en hacer los 100 envíos y respuestas
+                                              Serial.print("Tiempo transcurrido para 100 envíos y respuestas: ");
+                                              Serial.print(finalTime);
+                                              Serial.println(" ms");
+                                            }
+                                            // Espera un momento antes de repetir
+                                            delay(5000);
+                                          }
+                                        
+                                          // Actualiza el estado de la conexión
+                                          if (deviceConnected && !oldDeviceConnected) {
+                                            oldDeviceConnected = deviceConnected;
+                                          }
+                                        }"
+                                </pre>
+
+                                <h3>Codigo Python de computadora:</h3>
+                                <pre>
+                                    "import asyncio
+                                    from bleak import BleakClient
+                                    
+                                    # UUIDs del servicio y la característica
+                                    SERVICE_UUID = "dfe84f7c-4f03-43b2-b1c7-9f1fe9b5d734"
+                                    CHARACTERISTIC_UUID = "e839aa2d-88aa-45a0-8f6b-fc7c0b22b106"
+                                    
+                                    # Dirección MAC del dispositivo ESP32 (en formato XX:XX:XX:XX:XX:XX)
+                                    ESP32_ADDRESS = "7C:2C:67:55:D4:E2"
+                                    
+                                    async def run():
+                                        async with BleakClient(ESP32_ADDRESS) as client:
+                                            print(f"Conectado a {ESP32_ADDRESS}")
+                                    
+                                            # Función para manejar la recepción de datos
+                                            def notification_handler(sender, data):
+                                                received_value = data.decode('utf-8')
+                                                print(f"Valor recibido desde ESP32: {received_value}")
+                                    
+                                                # Envía una respuesta al ESP32
+                                                response = "A"  # Puedes cambiar este valor por cualquier carácter que quieras enviar
+                                                asyncio.create_task(client.write_gatt_char(CHARACTERISTIC_UUID, response.encode('utf-8')))
+                                                print(f"Respuesta enviada: {response}")
+                                    
+                                            # Suscribirse a las notificaciones de la característica
+                                            await client.start_notify(CHARACTERISTIC_UUID, notification_handler)
+                                    
+                                            # Mantener la conexión activa
+                                            while True:
+                                                await asyncio.sleep(1)
+                                    
+                                    # Ejecutar el bucle de eventos
+                                    asyncio.run(run())"
+                                </pre>
+
+                                <h3>Resultado:</h3>
+                                <img class="card-img-top" src="img/ESP32_resultado.png" alt="..." />
+
+                                <p></p>
+                                <h1>Conexion Bluetooth Arduino:</h1>
+                                <p class="fs-6 mb-4">Para el Arduino se ocupa un modulo externo de Bluetooth ya que este microcontrolador no tiene Bluetooth integrado. En este caso se uso un modulo de Bluetooth clasico</p>
+                                
+                                <h3>Codigo para conexion bluetooth en Arduino:</h3>
+                                <pre>
+                                         "#include SoftwareSerial.h
+
+                                        // Configuración del módulo HC-06
+                                        const int rxPin = 10;  // Pin RX del HC-06 conectado al pin 10 del Arduino
+                                        const int txPin = 11;  // Pin TX del HC-06 conectado al pin 11 del Arduino
+                                        SoftwareSerial bluetooth(rxPin, txPin);  // Crear objeto SoftwareSerial
+                                        unsigned long startTime;  // Variable para almacenar el tiempo de inicio
+                                        
+                                        
+                                        bool enviarDatos = true;  // Bandera para controlar el envío de datos
+                                        
+                                        void setup() {
+                                          // Inicializar la comunicación serial con la computadora
+                                          Serial.begin(9600);
+                                          Serial.println("Iniciando comunicación Bluetooth...");
+                                        
+                                          // Inicializar la comunicación Bluetooth con el HC-06
+                                          bluetooth.begin(9600);
+                                          delay(1000);  // Esperar a que el módulo HC-06 se inicialice
+                                        }
+                                        
+                                        void loop() {
+                                          // Verificar si se ha recibido el comando "Restart" desde el Monitor Serial
+                                          if (Serial.available()) {
+                                            String input = Serial.readStringUntil('\n');  // Leer la entrada hasta el salto de línea
+                                            input.trim();  // Eliminar espacios en blanco o saltos de línea adicionales
+                                        
+                                            if (input == "Restart") {
+                                              enviarDatos = true;  // Activar el envío de datos
+                                              Serial.println("Reiniciando envío de datos...");
+                                            }
+                                          }
+                                          // Enviar datos a Python si la bandera está activada
+                                          if (enviarDatos) {
+                                            for (int i = 1; i <= 100; i++) {
+                                              startTime = millis(); // Inicia el contador de tiempo
+                                              bluetooth.println(i);  // Enviar el valor actual a Python
+                                              Serial.print("Valor enviado: ");
+                                              Serial.println(i);
+                                        
+                                              // Esperar a recibir una respuesta de Python
+                                              if (bluetooth.available()) {
+                                                char response = bluetooth.read();  // Leer la respuesta de Python
+                                                Serial.print("Respuesta recibida: ");
+                                                Serial.println(response);
+                                              }
+                                                // Calcula el tiempo transcurrido
+                                                unsigned long finalTime = millis() - startTime;
+                                        
+                                                // Muestra el tiempo que tardó en hacer los 100 envíos y respuestas
+                                                Serial.print("Tiempo transcurrido para envíos y respuestas: ");
+                                                Serial.print(finalTime);
+                                                Serial.println(" ms");
+                                            }
+                                        
+                                            // Desactivar la bandera después de enviar los 100 valores
+                                            enviarDatos = false;
+                                            Serial.println("Envío de datos completado. Escribe 'Restart' para repetir.");
+                                          }
+                                            
+                                        }"
+                                </pre>
+
+                                <h3>Codigo de Python de computadora:</h3>
+                                <pre>
+                                    "import serial
+                                    import time
+                                    
+                                    # Configuración del puerto serial
+                                    ser = serial.Serial('COM13', 9600, timeout=1)  # Cambia 'COM3' por el puerto correcto
+                                    time.sleep(2)  # Esperar a que se establezca la conexión
+                                    
+                                    try:
+                                        while True:
+                                            if ser.in_waiting > 0:  # Verificar si hay datos disponibles
+                                                data = ser.readline().decode('utf-8').strip()  # Leer y decodificar los datos
+                                                print(f"Dato recibido: {data}")
+                                    
+                                                ser.write(b'A')  # Enviar el carácter 'A' al Arduino
+                                                print("Enviado: A")
+                                    
+                                    except KeyboardInterrupt:
+                                        print("Programa terminado")
+                                    
+                                    finally:
+                                        ser.close()  # Cerrar la conexión serial"
+                                </pre>
+                                <h3>Resultados:</h3>
+                                <img class="card-img-top" src="img/Arduino_resultado.png" alt="..." />
+
+                                <p></p>
+                                 <h2>Conclusiones</h2>
+                                 <p class="fs-6 mb-4">A través de esta práctica se logró comprender de manera clara las diferencias fundamentales entre Bluetooth Clásico y Bluetooth Low Energy (BLE). Se comprobó que, mientras Bluetooth Clásico es más adecuado para aplicaciones que requieren transmisión continua y mayor ancho de banda, como el audio y la transferencia de archivos, BLE destaca por su eficiencia energética y rápida conexión, siendo ideal para dispositivos que necesitan mantener el consumo al mínimo, como sensores, dispositivos portátiles y aplicaciones IoT.
+                                    Además, se evidenció que la elección de una u otra tecnología depende directamente de las necesidades específicas del sistema o dispositivo a implementar, ya sea priorizando el rendimiento o la autonomía. Esta experiencia permitió no solo validar las capacidades de cada tecnología, sino también fortalecer los conocimientos prácticos sobre comunicaciones inalámbricas, lo cual es fundamental en el desarrollo de soluciones modernas e inteligentes.</p>
