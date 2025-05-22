@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Práctica 2 | Ibero Puebla</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
+    <body class="d-flex flex-column h-100">
+        <main class="flex-shrink-0">
+            <!-- Navigation-->
+            <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+                <div class="container px-5">
+                    <a class="navbar-brand">Menu</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="../">Home</a></li>                    
+                            <li class="nav-item"><a class="nav-link" href="../index.html#resumen">Acerca de mi</a></li>
+                            <li class="nav-item"><a class="nav-link" href="../index.html#practicas">Prácticas</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Seccion TITULO de Portafolio-->
+            <header class="bg-primary py-2 mt-6">
+                <div class="container px-5">
+                    <div class="row gx-5 align-items-center justify-content-center">
+                        <div class="col-lg-8 col-xl-7 col-xxl-6">
+                            <div class="my-5 text-center text-xl-start">
+                                <h1 class="display-6 fw-bolder text-white mb-2">Portafolio de Actividades</h1>
+                                <h1 class="display-8 fw-bolder text-white mb-2">Elementos programables II</h1>
+                                <p id="resumen" class="display-8 fw-normal text-white-50 mb-4">Departamento de Ciencias e Ingenierías | Universidad Iberoamericana Puebla, México.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Seccion TITULO de la Práctica-->
+            <section class="py-3" id="scroll-target">
+                <div class="container px-5 my-2">
+                    <!-- Post header-->
+                    <header class="mb-4">
+                        <!-- Post title-->
+                        <h1 class="fw-bolder mb-1">Comparación de microcontroladores II</h1>
+
+                        <!-- ETIQUETA DE ALUMNO (Hacer una por cada alumno)-->
+                            <div class="ms-2">
+                                <div class="fw-bold">Héctor Cornejo Morales y Bruno Carballido Rosas</div>
+                                <div class="text-muted">Ing. Mecatrónica</div>
+                            </div>
+                        <!--Aqui termina etiqueta de alumno-->
+
+                        <div class="text-muted fst-italic mt-2 mb-2">Fecha: Febrero 25, 2025</div>
+                        <!-- ETIQUETAS O TOPICOS IMPORTANTES DE LA PRACTICA-->
+                        <a class="badge bg-primary text-decoration-none link-light" >Programación</a>
+                        <a class="badge bg-primary text-decoration-none link-light" >Electrónica</a>
+
+                    </header>
+                </div>
+            </section>
+
+            <!-- Seccion de CONTENIDO de la Práctica-->
+            <section>
+                <div class="container px-5">
+
+                    <figure class="mb-4"><img class="img-fluid rounded" width="800px" src="img/web.jpg" alt="..." /></figure>
+                                
+                    <p id="resumen">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Resumen -</h2>
+                        <p class="fs-6 mb-4">En esta práctica se realizó una comparación de rendimiento entre el ESP32-C6, Arduino UNO y el Attiny85. La práctica consistía en cuatro pruebas, la primera era una prueba de velocidad de procesamiento entre los tres microcontroladores, la segunda prueba consistía en una prueba de capacidad de memoria Flas y RAM de cada uno de los microcontroladores, la tercera prueba consistió en una prueba del puerto serial de cada  microprocesador para calcular la velocidad de impresión de datos a diferentes tamaños y baudios, la cuarta y última prueba consistió en la capacidad de cada microcontrolador en realizar un multitareas o hilos, básicamente es la ejecución simultanea de diferentes procesos.</p>
+                        
+                        <p id="intro">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Introducción -</h2>
+                        <p class="fs-6 mb-4">La efectividad de un microcontrolador es evaluada dependiendo diferentes características y el contexto o propósito para el cual se requiera, diferentes microcontroladores tienen sus ventajas y desventajas a la hora de usarlos dentro de ciertos papeles. Pero la base fundamental para evaluar un microcontrolador es checar su velocidad de procesamiento, su memoria, componentes y que tipo de funciones es capaz de realizar. </p>
+                        <p class="fs-6 mb-4">¿Pero de que dependen estas características y cómo podemos comprobarlas? La información que tenemos que checar a la hora de buscar un microcontrolador es la siguiente:</p>
+                        <ol>
+                            <li class=fw-bold  value="1">Frecuencia del Reloj</li>
+                                <ul>
+                                    <li type="disc" class="fs-6 mb-4">La frecuencia es basicamente la velocidad con la que el procesador ejecuta instrucciones, una mayor frecuencia es igual a mejor rendimiento pero de la misma manera consume mas energía. Hay microcontroladores que tienen una frecuencia establecida unica, esto se refiere a que no puedes modificar el valor de su freceuncia interna, pero puedes aumentarla usando algun componente externo. Por otro lado hay otros microcontroladores a los cuales les puedes cambiar el valor de su frecuencia interna sin la necesidad de algun componente externo.</li>
+                                </ul>
+                            <li class=fw-bold >Unidad Central de Procesamiento (CPU)</li>
+                                <ul>
+                                    <li type="disc" class="fs-6 mb-4">Es el cerebro de la computadora, es el encargado de procesar datos y ejecutar instrucciones. </li>
+                                    <li type="disc" class="fs-6 mb-4">La CPU puede ser de 8, 16, 32 o 64 bits, con esto se refiere a la cantidad de datos que el microcontrolador o computadora puede manejar al mismo tiempo.</li>
+                                </ul>
+                            <li class=fw-bold  >Memoria</li>
+                                <ul>
+                                    <li type="disc" class="fs-6 mb-4">Cada computadora cuenta con diferentes tipos de memoria</li>
+                                    <li type="disc" class="fs-6 mb-4">Flash ROM: Almacena datos de forma permanente (hasta que se cambien por otro programa).</li>
+                                    <li type="disc" class="fs-6 mb-4">RAM: Almacena datos de forma temporal en lo que se corre el programa.</li>
+                                    <li type="disc" class="fs-6 mb-4">EEPROM: Almacena datos en el microcontrolador incluso cuando este esta apagado.</li>
+                                </ul>
+                        </ol>
+                        <p class="fs-6 mb-4">La lista de especificaciones de cada uno de los microcontroladores explica a detalle estas características, lo único que necesitamos hacer es buscar las hojas de datos en internet.</p>
+
+                        
+                        <p id="materiales">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5" >- Materiales -</h2>
+                        <ul>
+                            <li type="disc" class="fs-6 mb-4">ESP32-C6</li>
+                            <li type="disc" class="fs-6 mb-4">Arduino UNO</li>
+                            <li type="disc" class="fs-6 mb-4">Attiny85</li>
+                            <li type="disc" class="fs-6 mb-4">Una protoboard</li>
+                            <li type="disc" class="fs-6 mb-4">Jumpers</li>
+                            <li type="disc" class="fs-6 mb-4">Caimanes</li>
+                            <li type="disc" class="fs-6 mb-4">Un osciloscopio</li>
+                            <li type="disc" class="fs-6 mb-4">LED's</li>
+                            <li type="disc" class="fs-6 mb-4">Resistencia de 330Ohms</li>
+                        </ul>
+
+                        <p id="desarrollo">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Desarrollo -</h2>
+                        <p class="fs-6 mb-4 ">Lo primero que hicimos fue realizar los códigos para las diferentes pruebas y, en dado caso de que lo necesitamos, adaptarlos al microcontrolador correspondiente. Estas practica esta enfocada en probar el desempeño del mismo microcontrolador por lo que casi no hubo elaboración de circuitos.</p>
+                        <h3 class="fw-bold mb-4 mt-5 fs-5">Prueba de velocidad</h3>
+                        <p class="fs-6 mb-4">Para la prueba de memoria se realizó un código el cual el microcontrolador sumara unidad por unidad hasta llegar a 10,000, aparte de que me fuera imprimiendo cada numero de la suma. Este código no cambia entre el ESP32 y el Arduino UNO, pero no se va a poder aplicar al attiny85 ya que este no cuenta con un puerto serial que nos pueda imprimir el dato del tiempo transcurrido en la operación.</p>
+                        <ul>
+                            <li class=fw-bold  >Código usado para el ESP32 y Arduino UNO:</li>
+                        </ul>
+
+                        <pre>
+                            "int suma = 0;
+                            String comando;
+                            unsigned long startTime;  // Variable para almacenar el tiempo de inicio
+                            
+                            void setup() {
+                              // Inicializa la comunicación serial a 115200 baudios
+                              Serial.begin(9600);
+                            }
+                            
+                            void loop() {
+                              // Reinicia el tiempo de inicio
+                              startTime = millis();
+                            
+                              // Realiza la suma hasta que suma sea menor que 1000
+                              while (suma < 10000) {
+                                suma = suma + 1;
+                                Serial.println(suma);
+                              }
+                            
+                              // Calcula el tiempo transcurrido
+                              unsigned long finalTime = millis() - startTime;
+                            
+                              // Muestra el tiempo que tardó en hacer la suma
+                              Serial.print("Tiempo transcurrido: ");
+                              Serial.print(finalTime);
+                              Serial.println(" ms");
+                            
+                              // Pide al usuario que escriba 'restart' para reiniciar la suma
+                              Serial.println("Escriba 'restart' para reiniciar la suma");
+                            
+                              // Espera a que el usuario ingrese un comando
+                              while (Serial.available() == 0) {
+                                // Espera activa
+                              }
+                            
+                              // Lee el comando ingresado por el usuario
+                              comando = Serial.readStringUntil('\n');
+                            
+                              // Si el comando es 'restart', reinicia la suma
+                              if (comando == "restart") {
+                                suma = 0;
+                              }
+                            }"</pre>
+
+                            <p class="fs-6 mb-4">Como mencione anteriormente este código no puede usarse de la misma manera en el Attiny85 dado a que este microcontrolador no cuenta con un puerto serial y es necesario hacer uso de hardware externo para poder imprimir algo de este microcontrolador, por lo tanto, cambiamos un poco el código.</p>
+                            <p class="fs-6 mb-4">Para la prueba de velocidad en el Attiny85 realizamos un código que contara del uno al 1000 y una vez que la sumara llegara al mil se prendería un LED. Solo quedaba tomar el tiempo en el que tarda en prenderse el LED después de que se cargue el código.</p>
+                            <ul>
+                                <li class=fw-bold  >Código usado para el Attiny85:</li>
+                            </ul>
+
+                            <pre>
+                                "unsigned int suma = 0;
+
+                                void setup() {
+                                  pinMode(3, OUTPUT);  // Configura el pin 3 como salida
+                                }
+                                
+                                void loop() {
+                                  suma++;  // Incrementa suma en 1 cada vez que se ejecuta loop()
+                                
+                                  if (suma >= 60000) {  // Cambia 10000 al valor que necesites
+                                    digitalWrite(3, HIGH);  // Enciende el LED
+                                    delay(500);
+                                    suma = 0;               // Reinicia el contador
+                                  }
+                                  else{
+                                    digitalWrite(3, LOW);   // Apaga el LED
+                                  }
+                                }"
+                            </pre>
+
+                        <h3 class="fw-bold mb-4 mt-5 fs-5">Prueba de memoria</h3>
+                        <p class="fs-6 mb-4 ">Similar a la prueba de la velocidad de procesamiento la prueba de memoria para el ESP32 y el Arduino UNO es básicamente el mismo código. Lo primero que hace el código es llenar la memoria flash con algún mensaje grande. Después se mide la memoria RAM libre en el programador. Después muestra el mensaje almacenado en la memoria flash. Después, intenta asignar dinámicamente un bloque de 10 KB de RAM, lo llena con datos, muestra cuánta memoria queda libre, y finalmente libera ese bloque para recuperar la memoria.</p>
+                        <ul>
+                            <li class=fw-bold  >Código usado para el ESP32 y Arduino UNO:</li>
+                        </ul>
+
+                        <pre>
+                            "#include Arduino.h
+
+                                // Almacenar un mensaje grande en la memoria Flash (PROGMEM)
+                                const char mensajeFlash[] PROGMEM = "Este es un mensaje almacenado en la memoria Flash del ESP32-C6. "
+                                                                   "La memoria Flash es no volátil y se utiliza para almacenar datos "
+                                                                   "que no cambian con frecuencia, como código de programa o textos largos.";
+                                
+                                // Función para medir la memoria libre en la SRAM
+                                size_t freeMemory() {
+                                  return ESP.getFreeHeap(); // Obtiene la memoria libre en el heap (SRAM)
+                                }
+                                
+                                void setup() {
+                                  // Iniciar la comunicación serial
+                                  Serial.begin(115200);
+                                  delay(1000); // Esperar a que el puerto serial se estabilice
+                                
+                                  // Mostrar información sobre la memoria Flash y RAM
+                                  Serial.println("=== Prueba de memoria en el ESP32-C6 ===");
+                                  Serial.print("Tamaño de la memoria Flash: ");
+                                  Serial.print(ESP.getFlashChipSize() / 1024);
+                                  Serial.println(" KB");
+                                
+                                  Serial.print("Memoria RAM total: ");
+                                  Serial.print(ESP.getHeapSize() / 1024);
+                                  Serial.println(" KB");
+                                
+                                  // Mostrar el mensaje almacenado en la memoria Flash
+                                  Serial.println("\nMensaje almacenado en la memoria Flash:");
+                                  Serial.println(mensajeFlash);
+                                
+                                  // Probar la memoria RAM (heap)
+                                  Serial.println("\nProbando la memoria RAM (heap)...");
+                                
+                                  // Asignar un bloque grande de memoria dinámica
+                                  size_t bloqueSize = 1024 * 10; // 10 KB
+                                  uint8_t* bloqueMemoria = (uint8_t*) malloc(bloqueSize);
+                                
+                                  if (bloqueMemoria == nullptr) {
+                                    Serial.println("Error: No se pudo asignar memoria dinámica.");
+                                  } else {
+                                    Serial.print("Bloque de memoria asignado: ");
+                                    Serial.print(bloqueSize / 1024);
+                                    Serial.println(" KB");
+                                
+                                    // Llenar el bloque de memoria con datos
+                                    for (size_t i = 0; i < bloqueSize; i++) {
+                                      bloqueMemoria[i] = i % 256; // Llenar con valores de 0 a 255
+                                    }
+                                
+                                    // Mostrar la memoria libre después de la asignación
+                                    Serial.print("Memoria libre después de la asignación: ");
+                                    Serial.print(freeMemory() / 1024);
+                                    Serial.println(" KB");
+                                
+                                    // Liberar el bloque de memoria
+                                    free(bloqueMemoria);
+                                    Serial.println("Bloque de memoria liberado.");
+                                  }
+                                
+                                  // Mostrar la memoria libre final
+                                  Serial.print("Memoria libre final: ");
+                                  Serial.print(freeMemory() / 1024);
+                                  Serial.println(" KB");
+                                
+                                  Serial.println("=== Prueba completada ===");
+                                }
+                                
+                                void loop() {
+                                  // No se necesita hacer nada en el loop para este ejemplo
+                                }"
+                        </pre>
+
+                        <p class="fs-6 mb-4 ">Para la prueba de memoria del Attiny85 se realizo el mismo procesos de llenar la memoria flash e intentar saturar la memoria RAM pero al no contar con un monitor serial tuvimos que apoyarnos del Output del Arduino IDE par observar el uso de la memoria del Attiny. </p>
+                        <ul>
+                            <li class=fw-bold  >Código usado para el Attiny85</li>
+                        </ul>
+
+                        <pre>
+                                "#include Arduino.h
+                                #include SoftwareSerial.h
+                                #include avr/pgmspace.h  // Necesario para usar PROGMEM en AVR
+                                
+                                // Almacenar un mensaje grande en la memoria Flash (PROGMEM)
+                                const char mensajeFlash[] PROGMEM = "Este es un mensaje almacenado en la memoria Flash del ATtiny85. "
+                                                                   "La memoria Flash es no volátil y se utiliza para almacenar datos "
+                                                                   "que no cambian con frecuencia, como código de programa o textos largos.";
+                                
+                                // Función para medir la memoria libre en la SRAM
+                                int freeMemory() {
+                                  extern int __heap_start, *__brkval;
+                                  int v;
+                                  return (int) &v - (__brkval == 0 ? (int) &__heap_start : (int) __brkval);
+                                }
+                                
+                                void setup() {
+                                  // Iniciar la comunicación serial con SoftwareSerial
+                                  mySerial.begin(9600);
+                                  delay(1000); // Esperar a que el puerto serial se estabilice
+                                
+                                  // Probar la memoria RAM (heap)
+                                  mySerial.println("\nProbando la memoria RAM (heap)...");
+                                
+                                  // Asignar un bloque grande de memoria dinámica
+                                  size_t bloqueSize = 64;  // 64 bytes (el ATtiny85 tiene muy poca RAM)
+                                  uint8_t* bloqueMemoria = (uint8_t*) malloc(bloqueSize);
+                                
+                                  if (bloqueMemoria == nullptr) {
+                                    mySerial.println("Error: No se pudo asignar memoria dinámica.");
+                                  } else {
+                                
+                                
+                                    // Llenar el bloque de memoria con datos
+                                    for (size_t i = 0; i < bloqueSize; i++) {
+                                      bloqueMemoria[i] = i % 256;  // Llenar con valores de 0 a 255
+                                    }
+                                
+                                    // Liberar el bloque de memoria
+                                    free(bloqueMemoria);
+                                  }
+                                }
+                                
+                                void loop() {
+                                  // No se necesita hacer nada en el loop para este ejemplo
+                                }"
+                        </pre>
+
+                        <h3 class="fw-bold mb-4 mt-5 fs-5">Prueba de monitor serial</h3>
+                        <p class="fs-6 mb-4 ">Para la prueba del monitor serial el código es simple, se manda un mensaje del microprocesador hacia el puerto y vamos cambiando los baudios para ver hasta qué punto sigue funcionando. Debido a que esta es una prueba de monitor serial, esta prueba no aplica para el Attiny85 dado a que este microcontrolador no cuanta con un puerto serial.</p>
+                        <ul>
+                            <li class=fw-bold  >Código usado para el ESP32 y Arduino UNO:</li>
+                        </ul>
+                        
+                        <pre>
+                            "   void setup() {
+                                // put your setup code here, to run once:
+                                Serial.begin(9600);
+                              }
+                              
+                              void loop() {
+                                // put your main code here, to run repeatedly:
+                                Serial.println("Hola mundo");
+                              }
+                              "
+                        </pre>
+    
+
+                        <p id="resultados">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Resultados -</h2>
+                        <p class="fs-6 mb-4">Dado a que los códigos son de una lógica sencilla la cual no requiere mucha memoria, o algún comportamiento lógico avanzado, no hubo mucha diferencia entre cómo se desempeñaban en los diferentes microcontroladores. Sabemos por cuestiones de componentes que el ESP32 es el microcontrolador mas efectivo, no solo tiene una mayor frecuencia que le permite ejecutar instrucciones más rápido, si no que tanto su memoria RAM como ROM son más grandes. Además de que tiene más pines GPIO, de ahí le sigue el Arduino UNO con una menor frecuencia, pero con similar espacio de memoria, por último estaría el Attiny el cual tiene la menor frecuencia y memoria de los 3. Pero volviendo a la base de la práctica debido a la simplicidad de los códigos no se pudo observar muchas diferencias en el desempeño de los microcontroladores.</p>
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">Videos</h2>
+                        <ul>
+                            <li type="disc" class="fs-6 mb-4">ESP32 prueba de velocidad</li>
+                            <figure class="mb-4" align="center"><video width="60%"  controls>
+                                <source src="video/esp_vel.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                            <li type="disc" class="fs-6 mb-4">Arduino UNO Prueba de velocidad</li>
+                            <figure class="mb-4" align="center"><video width="60%"  controls>
+                                <source src="video/arduino_vel.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                            <li type="disc" class="fs-6 mb-4">Attiny85 prueba de velocidad</li>
+                            <figure class="mb-4" align="center"><video width="60%"  controls>
+                                <source src="video/Attiny_memoria.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                            <li type="disc" class="fs-6 mb-4">Esp32 prueba de memoria</li>
+                            <figure class="mb-4" align="center"><video width="60%"  controls>
+                                <source src="video/ESP_memoria.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                            <li type="disc" class="fs-6 mb-4">Arduino UNO prueba de memoria</li>                     
+                            <figure class="mb-4" align="center"><video width="60%"  controls>
+                                <source src="video/Arduino_memoria.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                            <li type="disc" class="fs-6 mb-4">Attiny85 prueba de memoria</li>
+                            <figure class="mb-4" align="center"><video width="60%"  controls>
+                                <source src="video/Attiny_memoria.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                            <li type="disc" class="fs-6 mb-4">Esp32 prueba del monitor serial</li>
+                            <figure class="mb-4" align="center"><video width="60%"  controls>
+                                <source src="video/esp_serial.mp4" type="video/mp4">
+                            </video></p></figure>
+
+                            <li type="disc" class="fs-6 mb-4">Arduino UNO prueba de monitor serial</li>
+                            <figure class="mb-4" align="center"><video width="60%"  controls>
+                                <source src="video/Arduino_serial.mp4" type="video/mp4">
+                            </video></p></figure>
+                        </ul>
+
+                        <p id="conclusiones">
+                        <h2 class="fw-bolder mb-4 mt-5 fs-5">- Conclusiones -</h2>
+                        <p class="fs-6 mb-4">Para poder realizar una mejor comparación entre comparaciones es necesario un código que demande mas de estos, se necesitan hacer pruebas para poder observar los beneficios de mayor frecuencia y memoria en los microprocesadores para poder apreciar mas los diferentes escenarios en los que seria bueno usar uno o otra. En esta practica no se pudo apreciar mucho este tipo de conceptos, pero se hizo una investigación para comparar la arquitectura de los microcontroladores.</p>
+                        <style type="text/css">
+                            .tg  {border-collapse:collapse;border-spacing:0;}
+                            .tg td{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+                              overflow:hidden;padding:10px 5px;word-break:normal;}
+                            .tg th{border-color:black;border-style:solid;border-width:1px;font-family:Arial, sans-serif;font-size:14px;
+                              font-weight:normal;overflow:hidden;padding:10px 5px;word-break:normal;}
+                            .tg .tg-0pky{border-color:inherit;text-align:left;vertical-align:top}
+                            .tg .tg-z290{border-color:inherit;font-family:Arial, Helvetica, sans-serif !important;font-size:16px;text-align:left;
+                              vertical-align:top}
+                            .tg .tg-xhwz{border-color:inherit;font-family:Arial, Helvetica, sans-serif !important;font-size:16px;font-weight:bold;
+                              text-align:left;vertical-align:top}
+                            .tg .tg-r1gl{border-color:inherit;font-family:Arial, Helvetica, sans-serif !important;font-size:15px;text-align:left;
+                              vertical-align:top}
+                            .tg .tg-fymr{border-color:inherit;font-weight:bold;text-align:left;vertical-align:top}
+                            </style>
+                            <table class="tg"><thead>
+                              <tr>
+                                <th class="tg-0pky"></th>
+                                <th class="tg-z290"><span style="font-weight:bold">Attiny85</span></th>
+                                <th class="tg-z290"><span style="font-weight:bold">Aruino UNO</span><br></th>
+                                <th class="tg-xhwz">ESP32-C6</th>
+                              </tr></thead>
+                            <tbody>
+                              <tr>
+                                <td class="tg-xhwz">Arquitectura </td>
+                                <td class="tg-r1gl">RISC(Reduced Instruction DSet Computer) de 8 bits</td>
+                                <td class="tg-r1gl">RISC(Reduced Instruction Set Computer) de 8 bits</td>
+                                <td class="tg-r1gl">RISC-V(Reduced Instruction Set Computer Vth generation) de 32 bits</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">Frecuencia Max</td>
+                                <td class="tg-r1gl">8Mhz</td>
+                                <td class="tg-r1gl">16Mhz</td>
+                                <td class="tg-r1gl">160Mhz</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">Memoria Flash</td>
+                                <td class="tg-r1gl">8 KB</td>
+                                <td class="tg-r1gl">32KB</td>
+                                <td class="tg-r1gl">384KB</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">Memoria RAM</td>
+                                <td class="tg-r1gl">512 bytes</td>
+                                <td class="tg-r1gl">2 KB</td>
+                                <td class="tg-r1gl">320 KB</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">GPIO</td>
+                                <td class="tg-r1gl">6 pines</td>
+                                <td class="tg-r1gl">20 pines, 14 digitales y 6 analógicos</td>
+                                <td class="tg-r1gl">22 pines multifunción</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">ADC</td>
+                                <td class="tg-r1gl">4 pines de 10 bits</td>
+                                <td class="tg-r1gl">6 pines de 10 bits</td>
+                                <td class="tg-r1gl">5 pines de12 bits</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">PWM</td>
+                                <td class="tg-r1gl">3 pines</td>
+                                <td class="tg-r1gl">6 pines</td>
+                                <td class="tg-r1gl">14 pines</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">UART</td>
+                                <td class="tg-r1gl">Solo con software externo</td>
+                                <td class="tg-r1gl">2 pines RX/TX</td>
+                                <td class="tg-r1gl">1 puerto UART y se puede reasignar cualquier pin GPIO disponible</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">I2C</td>
+                                <td class="tg-r1gl">2 pines</td>
+                                <td class="tg-r1gl">2 pines</td>
+                                <td class="tg-r1gl">Se puede asignar a cualquier pin GPIO disponible</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-xhwz">Voltaje</td>
+                                <td class="tg-r1gl">2.7V - 5.5V</td>
+                                <td class="tg-r1gl">5V</td>
+                                <td class="tg-r1gl">3.3V</td>
+                              </tr>
+                              <tr>
+                                <td class="tg-fymr">Precio</td>
+                                <td class="tg-0pky">$30.63MXS</td>
+                                <td class="tg-0pky">$300MXS</td>
+                                <td class="tg-0pky">$122MXS</td>
+                              </tr>
+                            </tbody></table>
+
+                </div>
+            </section>
+
+            
+        </main>
+
+        <!-- Footer-->
+        <footer class="bg-dark py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0 text-white">Copyright &copy; Ingenierias-iberopuebla.mx 2023</div></div>
+                    <div class="col-auto">
+                        <a class="link-light small" href="#!">Privacy</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Terms</a>
+                        <span class="text-white mx-1">&middot;</span>
+                        <a class="link-light small" href="#!">Contact</a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+    </body>
+</html>
